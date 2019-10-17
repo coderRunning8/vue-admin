@@ -51,14 +51,14 @@
           <message-tip v-model="mesCount"></message-tip>
           <div class="user-dropdown-menu-con">
             <Row class="user-dropdown-innercon" type="flex" justify="end" align="middle">
-              <Dropdown>
+              <Dropdown @on-click="handleUserDropdown">
                 <a href="javascript:void(0)">
                   <span class="main-user-name">13708044289</span>
                   <Icon color="#fff" type="ios-arrow-down" />
                 </a>
                 <DropdownMenu slot="list">
-                  <DropdownItem>个人中心</DropdownItem>
-                  <DropdownItem>退出</DropdownItem>
+                  <!--<DropdownItem>个人中心</DropdownItem>-->
+                  <DropdownItem name="logOut">退出</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
               <Avatar style="background-color: #87d068;margin-left:15px;" icon="ios-person" />
@@ -196,6 +196,16 @@
               ])
             }
           })
+        },
+        //退出
+        handleUserDropdown(name){
+          if (name === 'logOut') {
+            // 退出登录
+            this.$store.commit('logout', this);
+            this.$router.push({
+              name: 'login'
+            });
+          }
         }
       },
       mounted(){

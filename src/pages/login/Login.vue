@@ -2,8 +2,8 @@
     <div class="login-page">
       <div class="login-container">
         <div class="login-left">
-          <img src="./logo03.png" alt="">
-          <h4>物业管理后台</h4>
+          <!--<img src="./logo03.png" alt="">-->
+          <h4><span>临江花海</span><br/>物联网平台</h4>
         </div>
         <div class="login-right">
           <transition name="fade">
@@ -238,6 +238,9 @@
       text-align: center;
       margin-top: 15px;
       letter-spacing: 2px;
+      span{
+        font-size: 32px;
+      }
     }
   }
   .login-right{
